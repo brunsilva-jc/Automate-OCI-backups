@@ -1,0 +1,115 @@
+#!/bin/bash
+#############################################
+# OCI Backup Configuration File
+# Copy this file to backup.config and customize
+#############################################
+
+# ===== BASIC CONFIGURATION =====
+
+# Folders to backup (array)
+# Add as many folders as needed
+FOLDERS_TO_BACKUP=(
+    "/home/learning"
+)
+
+# OCI Object Storage settings
+OCI_BUCKET="my-backup-bucket"
+BACKUP_PREFIX="backup"  # Prefix for backup files
+
+# ===== RETENTION POLICY =====
+
+# Number of days to keep old backups (0 = keep forever)
+RETENTION_DAYS=30
+
+# ===== COMPRESSION =====
+
+# Compression type: gzip, bzip2, xz, none
+COMPRESSION_TYPE="gzip"
+
+# Compression level (1-9, higher = better compression but slower)
+COMPRESSION_LEVEL=6
+
+# ===== ENCRYPTION =====
+
+# Enable encryption (true/false)
+ENABLE_ENCRYPTION=false
+
+# Encryption password (required if ENABLE_ENCRYPTION=true)
+# IMPORTANT: Use a strong password and keep it secure!
+ENCRYPTION_PASSWORD=""
+
+# ===== EXCLUSIONS =====
+
+# Patterns to exclude from backup (comma-separated)
+# Examples: "*.log,*.tmp,node_modules,__pycache__"
+EXCLUDE_PATTERNS="*.log,*.tmp,*.cache,node_modules,__pycache__,.git"
+
+# ===== NOTIFICATIONS =====
+
+# Webhook URL for notifications (Slack, Discord, etc.)
+# Leave empty to disable notifications
+NOTIFICATION_WEBHOOK=""
+
+# Email notifications (requires mail command)
+# EMAIL_TO="admin@example.com"
+# EMAIL_FROM="backup@example.com"
+
+# ===== ADVANCED SETTINGS =====
+
+# Directory for logs
+LOG_DIR="${SCRIPT_DIR}/logs"
+
+# Temporary directory for creating backups
+TEMP_DIR="/tmp/oci-backups"
+
+# Upload retry settings
+MAX_RETRIES=3
+RETRY_DELAY=5  # seconds
+
+# Verbose output (true/false)
+VERBOSE=false
+
+# Dry run mode (true/false) - test without actually backing up
+DRY_RUN=false
+
+# ===== SCHEDULING =====
+# Add to crontab for automatic backups:
+# Daily at 2 AM:     0 2 * * * /path/to/backup.sh
+# Weekly on Sunday:  0 2 * * 0 /path/to/backup.sh
+# Monthly:           0 2 1 * * /path/to/backup.sh
+
+# ===== PERFORMANCE TUNING =====
+
+# Maximum upload size before using multipart (in MB)
+# MAX_SINGLE_UPLOAD_SIZE=100
+
+# Number of parallel upload threads for large files
+# PARALLEL_UPLOAD_THREADS=4
+
+# ===== MONITORING =====
+
+# Send metrics to monitoring service
+# ENABLE_METRICS=false
+# METRICS_ENDPOINT="http://metrics.example.com/backup"
+
+# ===== DATABASE BACKUPS =====
+# Uncomment to enable database backups
+
+# MySQL/MariaDB
+# BACKUP_MYSQL=true
+# MYSQL_HOST="localhost"
+# MYSQL_USER="backup_user"
+# MYSQL_PASSWORD="password"
+# MYSQL_DATABASES="db1 db2 db3"  # Space-separated list
+
+# PostgreSQL
+# BACKUP_POSTGRES=true
+# POSTGRES_HOST="localhost"
+# POSTGRES_USER="backup_user"
+# POSTGRES_PASSWORD="password"
+# POSTGRES_DATABASES="db1 db2 db3"  # Space-separated list
+
+# MongoDB
+# BACKUP_MONGODB=true
+# MONGODB_URI="mongodb://localhost:27017"
+# MONGODB_DATABASES="db1 db2 db3"  # Space-separated list
