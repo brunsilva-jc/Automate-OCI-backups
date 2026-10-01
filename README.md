@@ -1,6 +1,6 @@
 # OCI Backup Script - Enterprise Edition
 
-[![Version](https://img.shields.io/badge/Version-2.0.0-blue.svg)](https://github.com/yourusername/oci-backup-script)
+[![Version](https://img.shields.io/badge/Version-2.0.0-blue.svg)](https://github.com/brunsilva-jc/Automate-OCI-backups)
 [![Shell](https://img.shields.io/badge/Shell-Bash-green.svg)](https://www.gnu.org/software/bash/)
 [![OCI](https://img.shields.io/badge/Oracle-Cloud-red.svg)](https://www.oracle.com/cloud/)
 [![License](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
@@ -52,8 +52,8 @@ A robust, enterprise-grade bash script for automated backups to Oracle Cloud Inf
 
 ```bash
 # Clone the repository
-git clone https://github.com/yourusername/oci-backup-script.git
-cd oci-backup-script
+git clone https://github.com/brunsilva-jc/Automate-OCI-backups.git
+cd Automate-OCI-backups
 
 # Run the installation script
 chmod +x install.sh
@@ -337,8 +337,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ## 📮 Support
 
 For issues, questions, or suggestions:
-- Open an issue on [GitHub](https://github.com/yourusername/oci-backup-script/issues)
-- Check the [Wiki](https://github.com/yourusername/oci-backup-script/wiki) for additional documentation
+- Open an issue on [GitHub](https://github.com/brunsilva-jc/Automate-OCI-backups/issues)
 
 ## 📊 Changelog
 
